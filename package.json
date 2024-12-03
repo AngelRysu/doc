@@ -1,0 +1,26 @@
+{
+  "name": "doc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/sequelize": "^4.28.20",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@fastify/swagger": "^9.4.0",
+    "@fastify/swagger-ui": "^5.1.0",
+    "fastify": "^5.1.0",
+    "mysql2": "^3.11.5",
+    "sequelize": "^6.37.5",
+    "zod": "^3.23.8"
+  },
+  "scripts": {
+    "dev": "nodemon --watch src --ext ts --exec ts-node api-getaway/src/drivers/http/server.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  }
+}

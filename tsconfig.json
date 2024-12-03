@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./doc",
+    "rootDir": "./api-getaway"
+  },
+  "include": ["api-getaway"],
+  "exclude": ["node_modules"]
+}
