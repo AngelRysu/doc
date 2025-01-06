@@ -1,0 +1,17 @@
+export default {
+  info: {
+    title: 'API Documentation',
+    description: 'API documentation for the project',
+    version: '1.0.0',
+  },
+  host: 'localhost:3003',
+  schemes: ['http'],
+  consumes: ['application/json'],
+  produces: ['application/json'],
+  tags: [],
+  routePrefix: '/docs',
+  uiConfig: {
+    docExpansion: 'none' as const,
+    deepLinking: false,
+  },
+};
