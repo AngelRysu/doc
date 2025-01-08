@@ -1,21 +1,41 @@
-import Fastify from 'fastify'
+import Fastify from 'fastify';
+import AutoLoad from '@fastify/autoload';
+import path from 'path';
+import dotenv from 'dotenv';
+import sequelize from 'models/config/database';
 
-const fastify = Fastify({
-    logger: true
-})
+dotenv.config();
 
-fastify.get("/hello", async (request,replay)=> {
-    return {message: "world"};
-});
+const startServer = async () => {
+  try {
+    await sequelize.sync({ force: false });
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
 
+  const fastify = Fastify({
+    logger: true,
+  });
 
-const start = async () =>{
-    try {
-        await fastify.listen({port: 3003});
-        fastify.log.info(`server listen on ${fastify.server.address()}`);
-    } catch (error) {
-        fastify.log.error(error);
-    }
-}
+  fastify.register(AutoLoad, {
+    dir: path.join(__dirname, 'plugins'),
+  });
 
-start();
+  fastify.register(AutoLoad, {
+    dir: path.join(__dirname, 'routes'),
+    ignorePattern: /.*(schema).*/,
+    options: { prefix: '/api' },
+  });
+
+  const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3003;
+
+  try {
+    await fastify.listen({ port: PORT, host: '0.0.0.0' });
+  } catch (err) {
+    fastify.log.error(err);
+    process.exit(1);
+  }
+};
+
+startServer();
