@@ -2,7 +2,8 @@ import { categoriaAdapter } from '../../adapters';
 import { createCategoriaSchema, 
   findoneCategoriaSchema,
   findAllCategoriaSchema,
-  deleteCategoriaSchema
+  deleteCategoriaSchema,
+  updateCategoriaSchema
 } from './schema';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 
@@ -51,6 +52,14 @@ function Router(fastify: FastifyInstance): void {
       },
     },
     categoriaAdapter.deleteCategoriaHandler
+  );
+
+  fastify.patch(
+    '/:idCategoria',
+    {
+      schema:{...updateCategoriaSchema},
+    },
+    categoriaAdapter.updateCategoriaHandler
   );
 }
 

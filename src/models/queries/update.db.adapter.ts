@@ -5,3 +5,4 @@ export const updateQuery =
   async (data: Partial<T['_attributes']>, where: WhereOptions<T['_attributes']>): Promise<[number, T[]]> => {
     return await model.update(data, { where, returning: true });
   };
+

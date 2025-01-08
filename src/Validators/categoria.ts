@@ -22,8 +22,13 @@ export const UpdateCategoriaSchema = z.object({
   idCategoria: z.number().int().positive({
     message: 'idCategoria debe ser un número entero positivo',
   }),
+});
+
+export const UpdateCategoriaBodySchema = z.object({
   idEtiqueta: z.number().int().positive().optional(),
-  idUsuario: z.number().int().positive().optional(),
+  idUsuario: z.number().positive({
+    message: 'idUsuario debe ser un número entero positivo',
+  }),
 });
 
 // Esquema para eliminar una categoría por ID
@@ -43,5 +48,6 @@ export const FindAllCategoriaSchema = z.object({
 export type CreateCategoriaDto = z.infer<typeof CreateCategoriaSchema>;
 export type FindOneCategoriaDto = z.infer<typeof FindOneCategoriaSchema>;
 export type UpdateCategoriaDto = z.infer<typeof UpdateCategoriaSchema>;
+export type UpdateCategoriaBodyDto = z.infer<typeof UpdateCategoriaBodySchema>;
 export type DeleteCategoriaDto = z.infer<typeof DeleteCategoriaSchema>;
 export type FindAllCategoriaDto = z.infer<typeof FindAllCategoriaSchema>;
