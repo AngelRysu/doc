@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { FindOneCategoriaSchema } from 'Validators/categoria';  // Esquema de Zod
+import { FindOneCategoriaSchema } from 'Validators/categoria'; 
 import { findOneCategoria } from '../../../use-cases/categorias';
 import { handleError } from '../../../utils/error.handler';
 

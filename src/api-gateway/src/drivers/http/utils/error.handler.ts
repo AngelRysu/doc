@@ -1,5 +1,6 @@
 import { FastifyReply } from 'fastify';
 import { ZodError } from 'zod';
+import { UniqueConstraintError } from 'sequelize'
 
 export class CustomError extends Error {
   customCode: number;
@@ -13,7 +14,7 @@ export class CustomError extends Error {
 
 interface ErrorHandlerOptions {
   reply: FastifyReply;
-  error: Error | ZodError | CustomError;
+  error: Error | ZodError | CustomError | UniqueConstraintError;
   defaultStatusCode?: number;
 }
 
@@ -38,7 +39,15 @@ export const handleError = ({
     });
   }
 
+  if (error instanceof UniqueConstraintError) {
+    return reply.status(400).send({
+      error: 'Bad Request',
+      message: 'La combinación de idUsuario e idEtiqueta ya existe',
+    });
+  }
+
   if (error instanceof Error) {
+    // Maneja errores generales
     return reply.status(defaultStatusCode).send({
       error: 'Internal Server Error',
       message: error.message,
