@@ -1,19 +1,20 @@
-import { FastifyInstance, FastifyRequest } from 'fastify';
-import * as dotenv from 'dotenv';
+import fastifyPlugin from 'fastify-plugin';
+import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
+import fastifyJwt from '@fastify/jwt';
 
-dotenv.config();
-
-export default async function (fastify: FastifyInstance) {
-  fastify.register(import('@fastify/jwt'), {
-    secret: process.env.JWT_SECRET || 'algosecreto',
+async function jwtPlugin(fastify: FastifyInstance) {
+  fastify.register(fastifyJwt, {
+    secret: process.env.AUTH_JWT_SECRET as string,
   });
 
-  fastify.decorate('authenticate', async function (request: FastifyRequest) {
+  fastify.decorate('authenticate', async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       await request.jwtVerify();
     } catch (err) {
       console.error(err);
-      throw new Error('Unauthorized'); 
+      reply.code(401).send({ error: 'Unauthorized' });
     }
   });
 }
+
+export default fastifyPlugin(jwtPlugin);

@@ -12,6 +12,7 @@ export default PluginLoader(async (fastify) => {
       consumes: swaggerConfig.consumes,
       produces: swaggerConfig.produces,
       tags: swaggerConfig.tags,
+      securityDefinitions: swaggerConfig.securityDefinitions,
     },
   });
 

@@ -14,4 +14,18 @@ export default {
     docExpansion: 'none' as const,
     deepLinking: false,
   },
+  // Definición de la seguridad
+  securityDefinitions: {
+    BearerAuth: {
+      type: 'apiKey' as const,
+      name: 'Authorization',
+      in: 'header',
+      description: 'JWT authorization. Enter "Bearer <your_token>"',
+    },
+  },
+  security: [
+    {
+      BearerAuth: [],
+    },
+  ],
 };

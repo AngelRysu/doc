@@ -3,13 +3,10 @@ import AutoLoad from '@fastify/autoload';
 import path from 'path';
 import dotenv from 'dotenv';
 import sequelize from 'models/config/database';
-import { setupModels } from 'models/expediente';
 
 dotenv.config();
 
 const startServer = async () => {
-  setupModels(sequelize);
-
   try {
     await sequelize.sync({ force: false });
   } catch (error) {

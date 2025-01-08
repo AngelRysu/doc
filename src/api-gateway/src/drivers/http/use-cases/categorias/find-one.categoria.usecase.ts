@@ -1,7 +1,13 @@
+type CategoriaAttributes = {
+  idCategoria: number;
+  idEtiqueta: number;
+  idUsuario: number;
+};
+
+type FindOneCategoriaData = Partial<CategoriaAttributes>;
+
 import { findOneQuery } from 'models/queries';
 import { Categoria } from 'models/expediente/Categorias';
-
-type FindOneCategoriaData = Partial<Categoria>;
 
 const findOneCategoria = async (where: FindOneCategoriaData) => {
   return await findOneQuery(Categoria)(where);
