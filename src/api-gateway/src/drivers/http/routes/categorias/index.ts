@@ -20,7 +20,6 @@ function Router(fastify: FastifyInstance): void {
       schema: {
         ...createCategoriaSchema,
       },
-      onRequest: [fastify.authenticate],
     },
     categoriaAdapter.createCategoriaHandler
   );

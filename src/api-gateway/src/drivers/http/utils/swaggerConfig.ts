@@ -14,7 +14,6 @@ export default {
     docExpansion: 'none' as const,
     deepLinking: false,
   },
-  // Definición de la seguridad
   securityDefinitions: {
     BearerAuth: {
       type: 'apiKey' as const,

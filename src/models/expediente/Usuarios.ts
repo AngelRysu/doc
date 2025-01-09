@@ -12,6 +12,7 @@ const UsuariosSchema = {
   curp: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
   },
   nombre: {
     type: DataTypes.STRING,
@@ -34,7 +35,8 @@ class Usuario extends Model {
     sequelize,
     tableName: USUARIO_TABLE,
     modelName: 'Usuarios',
-    };
+    timestamps: false,
+  };
   }
 
 }
