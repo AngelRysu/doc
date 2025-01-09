@@ -4,10 +4,10 @@ import { Optional } from 'sequelize';
 
 type UsuarioAttributes = {
     idUsuario: number;
-    curp: string;
-    nombre: string;
-    primerApellido: string;
-    segundoApellido: string;
+    curp?: string;
+    nombre?: string;
+    primerApellido?: string;
+    segundoApellido?: string;
 };
 
 type UpdateUsuarioData = Optional<UsuarioAttributes, 'idUsuario'>;

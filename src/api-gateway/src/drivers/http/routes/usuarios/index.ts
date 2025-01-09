@@ -1,6 +1,10 @@
 import { usuarioAdapter } from '../../adapters';
 import {
-    createUsuarioSchema
+    createUsuarioSchema,
+    deleteUsuarioSchema,
+    findAllUsuarioSchema,
+    findoneUsuarioSchema,
+    updateUsuarioSchema
 } from './schema';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 
@@ -19,6 +23,47 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         usuarioAdapter.createUsuarioHandler
+    );
+
+    fastify.get(
+        '/',
+        {
+            schema:{
+                ...findAllUsuarioSchema
+            },
+        },
+        usuarioAdapter.findAllUsuariosHandler
+    );
+
+    fastify.delete(
+        '/:idUsuario',
+        {
+            schema:{
+                ...deleteUsuarioSchema
+            },
+        },
+        usuarioAdapter.deleteUsuarioHandler
+    );
+
+    fastify.get(
+        '/:idUsuario',
+        {
+            schema:{
+                ...findoneUsuarioSchema
+            },
+        },
+        usuarioAdapter.findOneUsuarioHandler
+    );
+
+    fastify.patch(
+        '/:idUsuario',
+        {
+            schema:
+            {
+                ...updateUsuarioSchema
+            },
+        },
+        usuarioAdapter.updateUsuarioHandler
     );
 }
 
