@@ -15,16 +15,7 @@ declare module 'fastify' {
 }
 
 function Router(fastify: FastifyInstance): void{
-    fastify.post(
-        '/create',
-        {
-            schema:{
-                ...createUsuarioSchema
-            },
-        },
-        usuarioAdapter.createUsuarioHandler
-    );
-
+    
     fastify.get(
         '/',
         {
@@ -33,6 +24,26 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         usuarioAdapter.findAllUsuariosHandler
+    );
+    
+    fastify.get(
+        '/:idUsuario',
+        {
+            schema:{
+                ...findoneUsuarioSchema
+            },
+        },
+        usuarioAdapter.findOneUsuarioHandler
+    );
+
+    fastify.post(
+        '/create',
+        {
+            schema:{
+                ...createUsuarioSchema
+            },
+        },
+        usuarioAdapter.createUsuarioHandler
     );
 
     fastify.delete(
@@ -44,17 +55,7 @@ function Router(fastify: FastifyInstance): void{
         },
         usuarioAdapter.deleteUsuarioHandler
     );
-
-    fastify.get(
-        '/:idUsuario',
-        {
-            schema:{
-                ...findoneUsuarioSchema
-            },
-        },
-        usuarioAdapter.findOneUsuarioHandler
-    );
-
+    
     fastify.patch(
         '/:idUsuario',
         {

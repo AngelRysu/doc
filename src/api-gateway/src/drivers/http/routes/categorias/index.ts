@@ -14,14 +14,14 @@ declare module 'fastify' {
 }
 
 function Router(fastify: FastifyInstance): void {
-  fastify.post(
-    '/usuarios/:idUsuario',
+  fastify.get(
+    '/',
     {
       schema: {
-        ...createCategoriaSchema,
+        ...findAllCategoriaSchema,
       },
     },
-    categoriaAdapter.createCategoriaHandler
+    categoriaAdapter.findAllCategoriaHandler
   );
 
   fastify.get(
@@ -33,15 +33,23 @@ function Router(fastify: FastifyInstance): void {
     },
     categoriaAdapter.findOneCategoriaHandler
   );
-
-  fastify.get(
-    '/',
+  
+  fastify.post(
+    '/usuarios/:idUsuario',
     {
       schema: {
-        ...findAllCategoriaSchema,
+        ...createCategoriaSchema,
       },
     },
-    categoriaAdapter.findAllCategoriaHandler
+    categoriaAdapter.createCategoriaHandler
+  );
+  
+  fastify.patch(
+    '/:idCategoria',
+    {
+      schema:{...updateCategoriaSchema},
+    },
+    categoriaAdapter.updateCategoriaHandler
   );
 
   fastify.delete(
@@ -53,13 +61,6 @@ function Router(fastify: FastifyInstance): void {
     categoriaAdapter.deleteCategoriaHandler
   );
 
-  fastify.patch(
-    '/:idCategoria',
-    {
-      schema:{...updateCategoriaSchema},
-    },
-    categoriaAdapter.updateCategoriaHandler
-  );
 }
 
 export default Router;

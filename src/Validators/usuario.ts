@@ -41,10 +41,3 @@ export const FindAllUsuarioSchema = z.object({
   limit: z.number().int().min(1).optional(),
   sort: z.enum(['asc', 'desc']).optional(),
 });
-
-export type CreateUsuarioDto = z.infer<typeof CreateUsuarioSchema>;
-export type FindOneUsuarioDto = z.infer<typeof FindOneUsuarioSchema>;
-export type UpdateUsuarioDto = z.infer<typeof UpdateUsuarioSchema>;
-export type UpdateUsuarioBodyDto = z.infer<typeof UpdateUsuarioBodySchema>;
-export type DeleteUsuarioDto = z.infer<typeof DeleteUsuarioSchema>;
-export type FindAllUsuarioDto = z.infer<typeof FindAllUsuarioSchema>;
