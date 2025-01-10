@@ -1,5 +1,5 @@
 import { findOneQuery, createQuery } from 'models/queries';
-import { Categoria } from 'models/expediente/Categorias';
+import { Categoria } from 'models/types/Categorias';
 import { CreationAttributes } from 'sequelize';
 
 type CreateCategoriaData = CreationAttributes<Categoria>;

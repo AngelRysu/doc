@@ -8,7 +8,7 @@ type DocumentoAttributes = {
   type FindOneDocumentoData = Partial<DocumentoAttributes>;
   
   import { findOneQuery } from 'models/queries';
-  import { Documento } from 'models/expediente/Documentos';
+  import { Documento } from 'models/types/Documentos';
   
   const findOneDocumento = async (where: FindOneDocumentoData) => {
     return await findOneQuery(Documento)(where);

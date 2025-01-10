@@ -5,7 +5,7 @@ type CategoriaAttributes = {
 type DeleteCategoriaData = Partial<CategoriaAttributes>;
 
 import { deleteQuery } from 'models/queries';
-import { Categoria } from 'models/expediente/Categorias';
+import { Categoria } from 'models/types/Categorias';
 
 const deleteCategoria = async (where: DeleteCategoriaData) => {
   return await deleteQuery(Categoria)(where);

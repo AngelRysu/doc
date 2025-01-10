@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
-import { setupModels } from '../expediente'; // Importa el setup de modelos
+import { setupModels } from '../types'; // Importa el setup de modelos
 
 dotenv.config();
 

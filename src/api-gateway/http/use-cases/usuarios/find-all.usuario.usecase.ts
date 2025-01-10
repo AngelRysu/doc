@@ -1,5 +1,5 @@
 import { findAllQuery } from 'models/queries';
-import { Usuario } from 'models/expediente/Usuarios';
+import { Usuario } from 'models/types/Usuarios';
 
 type FindAllUsuariosData = Partial<Usuario>;
 

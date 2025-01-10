@@ -1,5 +1,5 @@
 import { findAllQuery } from 'models/queries';
-import { Documento } from 'models/expediente/Documentos';
+import { Documento } from 'models/types/Documentos';
 
 type FindAllDocumentosData = Partial<Documento>;
 

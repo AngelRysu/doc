@@ -9,7 +9,7 @@ type UsuarioAttributes = {
   type FindOneUsuarioData = Partial<UsuarioAttributes>;
   
   import { findOneQuery } from 'models/queries';
-  import { Usuario } from 'models/expediente/Usuarios';
+  import { Usuario } from 'models/types/Usuarios';
   
   const findOneUsuario = async (where: FindOneUsuarioData) => {
     return await findOneQuery(Usuario)(where);

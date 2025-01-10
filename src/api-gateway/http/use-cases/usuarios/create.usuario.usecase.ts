@@ -1,5 +1,5 @@
 import { findOneQuery, createQuery } from 'models/queries';
-import { Usuario } from 'models/expediente/Usuarios';
+import { Usuario } from 'models/types/Usuarios';
 import { CreationAttributes } from 'sequelize';
 
 type CreateUsuarioData = CreationAttributes<Usuario>;

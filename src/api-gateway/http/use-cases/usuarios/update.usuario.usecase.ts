@@ -1,5 +1,5 @@
 import { updateQuery } from 'models/queries';
-import { Usuario } from 'models/expediente/Usuarios';
+import { Usuario } from 'models/types/Usuarios';
 import { Optional } from 'sequelize';
 
 type UsuarioAttributes = {

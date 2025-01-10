@@ -1,5 +1,5 @@
 import { findOneQuery, createQuery } from 'models/queries';
-import { Documento } from 'models/expediente/Documentos';
+import { Documento } from 'models/types/Documentos';
 import { CreationAttributes } from 'sequelize';
 
 type CreateDocumentoData = CreationAttributes<Documento>;

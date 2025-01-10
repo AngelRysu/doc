@@ -1,5 +1,5 @@
 import { updateQuery } from 'models/queries';
-import { Categoria } from 'models/expediente/Categorias';
+import { Categoria } from 'models/types/Categorias';
 import { Optional } from 'sequelize';
 
 interface CategoriaAttributes {

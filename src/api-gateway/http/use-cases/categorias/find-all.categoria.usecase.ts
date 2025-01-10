@@ -1,5 +1,5 @@
 import { findAllQuery } from 'models/queries';
-import { Categoria } from 'models/expediente/Categorias';
+import { Categoria } from 'models/types/Categorias';
 
 type FindAllCategoriasData = Partial<Categoria>;
 
