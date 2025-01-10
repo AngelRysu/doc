@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { UpdateCategoriaSchema, UpdateCategoriaBodySchema } from 'Validators/categoria'; 
+import { UpdateCategoriaSchema, UpdateCategoriaBodySchema } from 'validators/categoria'; 
 import { updateCategoria } from '../../../use-cases/categorias';
 import { handleError } from '../../../utils/error.handler';
 

@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { DeleteUsuarioSchema } from 'Validators/usuario';
+import { DeleteUsuarioSchema } from 'validators/usuario';
 import { deleteUsuario } from '../../../use-cases/usuarios';
 import { handleError } from '../../../utils/error.handler';
 

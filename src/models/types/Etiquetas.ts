@@ -23,7 +23,8 @@ class Etiqueta extends Model {
     sequelize,
     tableName: ETIQUETA_TABLE,
     modelName: 'Etiquetas',
-    };
+    timestamps: false,
+  };
   }
 }
 

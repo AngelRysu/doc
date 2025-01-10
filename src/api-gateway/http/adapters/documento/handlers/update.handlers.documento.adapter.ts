@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { UpdateDocumentoSchema, UpdateDocumentoBodySchema } from 'Validators/documento'; 
+import { UpdateDocumentoSchema, UpdateDocumentoBodySchema } from 'validators/documento'; 
 import { updateDocumento } from '../../../use-cases/documentos';
 import { handleError } from '../../../utils/error.handler';
 

@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { FindOneUsuarioSchema } from 'Validators/usuario'; 
+import { FindOneUsuarioSchema } from 'validators/usuario'; 
 import { findOneUsuario } from '../../../use-cases/usuarios';
 import { handleError } from '../../../utils/error.handler';
 

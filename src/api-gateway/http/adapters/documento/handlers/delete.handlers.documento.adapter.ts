@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { DeleteDocumentoSchema } from 'Validators/documento';
+import { DeleteDocumentoSchema } from 'validators/documento';
 import { deleteDocumento } from '../../../use-cases/documentos';
 import { handleError } from '../../../utils/error.handler';
 

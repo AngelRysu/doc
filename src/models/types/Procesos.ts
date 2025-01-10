@@ -26,7 +26,8 @@ class Proceso extends Model {
     sequelize,
     tableName: PROCESO_TABLE,
     modelName: 'Procesos',
-    };
+    timestamps: false,
+  };
   }
 }
 

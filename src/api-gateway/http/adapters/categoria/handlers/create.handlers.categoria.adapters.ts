@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { createCategoria } from '../../../use-cases/categorias';
-import { CreateCategoriaSchema } from 'Validators/categoria';
+import { CreateCategoriaSchema } from 'validators/categoria';
 import { handleError } from '../../../utils/error.handler';
 
 interface CreateCategoriaParams {

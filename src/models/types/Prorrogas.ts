@@ -51,6 +51,7 @@ class Prorroga extends Model {
       sequelize,
       tableName: PRORROGA_TABLE,
       modelName: 'Prorroga',
+      timestamps: false,
     };
   }
 }

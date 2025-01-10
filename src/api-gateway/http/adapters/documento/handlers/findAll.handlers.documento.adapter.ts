@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { FindAllDocumentoSchema } from 'Validators/documento';
+import { FindAllDocumentoSchema } from 'validators/documento';
 import { findAllDocumentos } from '../../../use-cases/documentos';
 import { handleError } from '../../../utils/error.handler';
 

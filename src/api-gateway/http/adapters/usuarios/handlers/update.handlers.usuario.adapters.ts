@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { UpdateUsuarioBodySchema, UpdateUsuarioSchema } from 'Validators/usuario'; 
+import { UpdateUsuarioBodySchema, UpdateUsuarioSchema } from 'validators/usuario'; 
 import { updateUsuario } from '../../../use-cases/usuarios';
 import { handleError } from '../../../utils/error.handler';
 

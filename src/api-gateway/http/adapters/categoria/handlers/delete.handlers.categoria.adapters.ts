@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { DeleteCategoriaSchema } from 'Validators/categoria';
+import { DeleteCategoriaSchema } from 'validators/categoria';
 import { deleteCategoria } from '../../../use-cases/categorias';
 import { handleError } from '../../../utils/error.handler';
 

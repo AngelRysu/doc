@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { createDocumento } from '../../../use-cases/documentos';
-import { CreateDocumentoSchema } from 'Validators/documento';
+import { CreateDocumentoSchema } from 'validators/documento';
 import { handleError } from '../../../utils/error.handler';
 
 export const createDocumentoHandler = async (

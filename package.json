@@ -27,6 +27,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/api-gateway/http/server",
+    "lint": "eslint --fix .",
     "start": "node dist/server.js",
     "build": "tsc"
   },

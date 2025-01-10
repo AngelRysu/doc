@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { FindAllCategoriaSchema } from 'Validators/categoria';
+import { FindAllCategoriaSchema } from 'validators/categoria';
 import { findAllCategorias } from '../../../use-cases/categorias';
 import { handleError } from '../../../utils/error.handler';
 

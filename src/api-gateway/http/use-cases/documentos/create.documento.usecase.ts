@@ -8,7 +8,7 @@ const createDocumento = async (data: CreateDocumentoData) => {
   const existingDocumento = await findOneQuery(Documento)({});
 
   if (existingDocumento) {
-    throw new Error('La combinación de idUsuario e idEtiqueta ya existe');
+    throw new Error('El documento ya existe');
   }
 
   return await createQuery(Documento)(data);
