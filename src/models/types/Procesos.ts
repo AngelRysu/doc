@@ -1,6 +1,6 @@
 import { Model, DataTypes, Sequelize } from "sequelize";
 
-const PROCESO_TABLE = 'Prosesos';
+const PROCESO_TABLE = 'Procesos';
 
 const ProcesosSchema = {
   idProceso: {
@@ -29,6 +29,7 @@ class Proceso extends Model {
     timestamps: false,
   };
   }
+
 }
 
 export { PROCESO_TABLE, ProcesosSchema, Proceso };

@@ -11,6 +11,9 @@ const sequelize = new Sequelize({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   logging: process.env.NODE_ENV !== 'development',
+  define: {
+    timestamps: false,
+  },
 });
 
 setupModels(sequelize);
