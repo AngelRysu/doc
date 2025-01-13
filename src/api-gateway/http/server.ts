@@ -8,7 +8,7 @@ dotenv.config();
 
 const startServer = async () => {
   try {
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: false, alter: false});
   } catch (error) {
     console.log(error);
     process.exit(1);
