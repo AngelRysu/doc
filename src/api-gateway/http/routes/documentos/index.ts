@@ -50,7 +50,7 @@ function Router(fastify: FastifyInstance): void{
     );
 
     fastify.patch(
-        './:idDocumento',
+        '/:idDocumento',
         {
             schema:
             {
@@ -61,7 +61,7 @@ function Router(fastify: FastifyInstance): void{
     );
 
     fastify.delete(
-        './:idDocumento',
+        '/:idDocumento',
         {
             schema:
             {

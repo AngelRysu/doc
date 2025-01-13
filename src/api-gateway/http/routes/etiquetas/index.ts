@@ -1,7 +1,10 @@
 import { etiqueraAdapter } from '../../adapters';
 import {
     createEtiquetaSchema,
-    findAllEtiquetaSchema
+    findAllEtiquetaSchema,
+    findoneEtiquetaSchema,
+    updateEtiquetaSchema,
+    deleteEtiquetaSchema
 } from './schema';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 
@@ -24,6 +27,17 @@ function Router(fastify: FastifyInstance): void{
         etiqueraAdapter.findAllEtiquetasHandler
     );
 
+    fastify.get(
+        '/:idEtiqueta',
+        {
+            schema:
+            {
+                ...findoneEtiquetaSchema
+            },
+        },
+        etiqueraAdapter.findOneEtiquetaHandler
+    );
+
     fastify.post(
         '/create',
         {
@@ -34,7 +48,27 @@ function Router(fastify: FastifyInstance): void{
         etiqueraAdapter.createEtiquetaHandler
     );
 
-    
+    fastify.patch(
+        '/:idEtiqueta',
+        {
+            schema:
+            {
+                ...updateEtiquetaSchema
+            },
+        },
+        etiqueraAdapter.updateEtiquetaHandler
+    );
+
+    fastify.delete(
+        '/:idEtiqueta',
+        {
+            schema:
+            {
+                ...deleteEtiquetaSchema
+            },
+        },
+        etiqueraAdapter.deleteEtiquetaHandler
+    );
 }
 
 
