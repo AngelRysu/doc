@@ -1,6 +1,7 @@
 import { controlAdapter } from '../../adapters'
 import {
-    createControlSchema
+    createControlSchema,
+    findAllControlSchema
 } from './schema'
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 
@@ -21,6 +22,16 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         controlAdapter.createControlHandler
+    );
+
+    fastify.get(
+        '/',
+        {
+            schema:{
+                ...findAllControlSchema
+            },
+        },
+        controlAdapter.findAllControlHandler
     );
 
 }
