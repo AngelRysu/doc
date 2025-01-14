@@ -35,8 +35,7 @@ class Usuario extends Model {
     sequelize,
     tableName: USUARIO_TABLE,
     modelName: 'Usuarios',
-    timestamps: false,
-  };
+    };
   }
 
 }

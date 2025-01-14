@@ -42,7 +42,6 @@ class Categoria extends Model {
       sequelize,
       tableName: CATEGORIA_TABLE,
       modelName: 'Categorias',
-      timestamps: false,
       indexes: [
         {
           unique: true,
