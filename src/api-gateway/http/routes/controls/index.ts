@@ -3,7 +3,7 @@ import {
     createControlSchema,
     findAllControlSchema,
     findOneControlSchema,
-    //updateControlSchema,
+    updateControlSchema,
     deleteControlSchema
 } from './schema'
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
@@ -55,6 +55,16 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         controlAdapter.deleteControlHandler
+    );
+
+    fastify.patch(
+        '/:idControl',
+        {
+            schema:{
+                ...updateControlSchema
+            },
+        },
+        controlAdapter.updateControlHandler
     );
 }
 
