@@ -17,18 +17,16 @@ Este proyecto es una API RESTful desarrollada con Fastify, Sequelize, TypeScript
 |root
 |---src
 |---|---api-gateway
-|---|---|---src
-|---|---|---|---drivers
-|---|---|---|---|---http
-|---|---|---|---|---|---adapters (Carpeta que maneja todos los handlers)
-|---|---|---|---|---|---plugins (Carpeta que maneja los plugins)
-|---|---|---|---|---|---routes (Carpeta que maneja todas las rutas)
-|---|---|---|---|---|---use-cases (Carpeta que maneja todos los use-cases)
-|---|---|---|---|---|---utils (Carpeta que maneja los archivos como errorhandler y swaggerconfig)
-|---|---|---|---|---|---server.ts
+|---|---|http
+|---|---|---|adapters (Carpeta que maneja todos los handlers)
+|---|---|---|---plugins (Carpeta que maneja los plugins)
+|---|---|---|---routes (Carpeta que maneja todas las rutas)
+|---|---|---|---use-cases (Carpeta que maneja todos los use-cases)
+|---|---|---|---utils (Carpeta que maneja los archivos como errorhandler y swaggerconfig)
+|---|---|---|---server.ts
 |---|---models
 |---|---|---config (Carpeta con a configuracion de la base de datos)
-|---|---|---expediente (Carpeta con los modelos sequelize)
+|---|---|---types (Carpeta con los modelos sequelize)
 |---|---|---queries (Carpeta que maneja los queries)
 |---|---validators (Carpeta que maneja Zod)
 |---.env
