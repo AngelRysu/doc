@@ -42,7 +42,7 @@ export const handleError = ({
   if (error instanceof UniqueConstraintError) {
     return reply.status(400).send({
       error: 'Bad Request',
-      message: 'La combinación de idUsuario e idEtiqueta ya existe',
+      message: 'La combinación ya existe',
     });
   }
 

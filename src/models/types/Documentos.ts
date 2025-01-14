@@ -29,7 +29,6 @@ class Documento extends Model {
     sequelize,
     tableName: DOCUMENTO_TABLE,
     modelName: 'Documentos',
-    timestamps: false,
     };
   }
 }

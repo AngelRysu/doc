@@ -49,8 +49,13 @@ class Control extends Model {
       return {
       sequelize,
       tableName: CONTROL_TABLE,
-      timestamps: false,
       modelName: 'Control',
+      indexes: [
+        {
+          unique: true,
+          fields: ['idProceso', 'idDocumento','digital'],
+        },
+      ],
     };
   }
 }

@@ -54,7 +54,6 @@ class Expediente extends Model {
       sequelize,
       tableName: EXPEDIENTE_TABLE,
       modelName: 'Expediente',
-      timestamps: false,
     };
   }
 }
