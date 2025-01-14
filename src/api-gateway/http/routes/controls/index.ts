@@ -2,7 +2,9 @@ import { controlAdapter } from '../../adapters'
 import {
     createControlSchema,
     findAllControlSchema,
-    findOneControlSchema
+    findOneControlSchema,
+    //updateControlSchema,
+    deleteControlSchema
 } from './schema'
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 
@@ -43,6 +45,16 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         controlAdapter.findOneControlHandler
+    );
+
+    fastify.delete(
+        '/:idControl',
+        {
+            schema:{
+                ...deleteControlSchema
+            },
+        },
+        controlAdapter.deleteControlHandler
     );
 }
 
