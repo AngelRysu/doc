@@ -54,6 +54,12 @@ class Expediente extends Model {
       sequelize,
       tableName: EXPEDIENTE_TABLE,
       modelName: 'Expediente',
+      indexes: [
+        {
+          unique: true,
+          fields: [ 'idDocumento', 'idUsuario', 'estado'],
+        },
+      ],
     };
   }
 }

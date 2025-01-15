@@ -4,8 +4,6 @@ import { findOneProrrogaHandler } from './findOne.handles.prorroga.adapter';
 import { deleteProrrogaHandler } from './delete.handlers.prorroga.adapter';
 import { updateProrrogaHandler } from './update.handlers.prorroga.adapter';
 
-
-
 export const prorrogaAdapter = {
   createProrrogaHandler,
   findAllProrrogaHandler,

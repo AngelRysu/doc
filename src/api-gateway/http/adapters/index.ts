@@ -5,6 +5,7 @@ import { etiqueraAdapter } from './etiqueta/handlers';
 import { procesoAdapter } from './proceso/handlers';
 import { controlAdapter } from  './control/handlers';
 import { prorrogaAdapter } from './prorroga/handlers';
+import { expedienteAdapter } from './expediente/handlers';
 
 export { 
     categoriaAdapter,
@@ -13,5 +14,6 @@ export {
     etiqueraAdapter,
     procesoAdapter,
     controlAdapter,
-    prorrogaAdapter
+    prorrogaAdapter,
+    expedienteAdapter
 };
