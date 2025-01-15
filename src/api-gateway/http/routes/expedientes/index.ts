@@ -2,6 +2,7 @@ import { expedienteAdapter } from '../../adapters';
 import { createExpedienteSchema,
     findAllExpedienteSchema,
     findoneExpedienteSchema,
+    deleteExpedienteSchema,
 
 } from './schema';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
@@ -46,6 +47,17 @@ function Router(fastify: FastifyInstance): void{
         },
         expedienteAdapter.findOneExpedienteHandler
     );
+
+    fastify.delete(
+        '/:idExpediente',
+        {
+            schema:
+            {
+                ...deleteExpedienteSchema
+            },
+        },
+        expedienteAdapter.deleteExpedienteHandler
+    );  
 };
 
 
