@@ -51,6 +51,12 @@ class Prorroga extends Model {
       sequelize,
       tableName: PRORROGA_TABLE,
       modelName: 'Prorroga',
+      indexes: [
+        {
+          unique: true,
+          fields: ['idUsuario', 'idDocumento', 'estado'],
+        },
+      ],
     };
   }
 }
