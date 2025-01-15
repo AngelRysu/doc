@@ -1,0 +1,1 @@
+export { createProrroga } from './create.prorroga.usecase';

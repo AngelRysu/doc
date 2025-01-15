@@ -1,0 +1,1 @@
+export { createProrrogaSchema } from './create.prorroga.schema';

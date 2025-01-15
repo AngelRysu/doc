@@ -2,9 +2,9 @@ import { categoriaAdapter } from './categoria/handlers';
 import { usuarioAdapter } from './usuarios/handlers';
 import { documentoAdapter } from './documento/handlers';
 import { etiqueraAdapter } from './etiqueta/handlers';
-import { procesoAdapter } from './proceso/adapter';
+import { procesoAdapter } from './proceso/handlers';
 import { controlAdapter } from  './control/handlers';
-import {  } from  './';
+import { prorrogaAdapter } from './prorroga/handlers';
 
 export { 
     categoriaAdapter,
@@ -13,4 +13,5 @@ export {
     etiqueraAdapter,
     procesoAdapter,
     controlAdapter,
+    prorrogaAdapter
 };
