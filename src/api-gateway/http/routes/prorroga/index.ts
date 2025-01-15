@@ -2,6 +2,7 @@ import { prorrogaAdapter } from '../../adapters';
 import {
     createProrrogaSchema,
     findAllProrrogaSchema,
+    findoneProrrogaSchema
 } from './schema';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 
@@ -32,6 +33,17 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         prorrogaAdapter.findAllProrrogaHandler
+    );
+
+    fastify.get(
+        '/:idProrroga',
+        {
+            schema:
+            {
+                ...findoneProrrogaSchema
+            },
+        },
+        prorrogaAdapter.findOneProrrogaHandler
     );
 };
 
