@@ -1,6 +1,7 @@
 import { expedienteAdapter } from '../../adapters';
 import { createExpedienteSchema,
-    findAllExpedienteSchema
+    findAllExpedienteSchema,
+    findoneExpedienteSchema,
 
 } from './schema';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
@@ -33,6 +34,17 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         expedienteAdapter.findAllProrrogaHandler
+    );
+
+    fastify.get(
+        '/:idExpediente',
+        {
+            schema:
+            {
+                ...findoneExpedienteSchema
+            },
+        },
+        expedienteAdapter.findOneExpedienteHandler
     );
 };
 
