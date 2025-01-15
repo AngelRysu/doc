@@ -2,7 +2,8 @@ import { prorrogaAdapter } from '../../adapters';
 import {
     createProrrogaSchema,
     findAllProrrogaSchema,
-    findoneProrrogaSchema
+    findoneProrrogaSchema,
+    deleteProrrogaSchema,
 } from './schema';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 
@@ -44,6 +45,17 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         prorrogaAdapter.findOneProrrogaHandler
+    );
+
+    fastify.delete(
+        '/:idProrroga',
+        {
+            schema:
+            {
+                ...deleteProrrogaSchema
+            },
+        },
+        prorrogaAdapter.deleteProrrogaHandler
     );
 };
 
