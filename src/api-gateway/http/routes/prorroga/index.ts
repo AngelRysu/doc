@@ -4,6 +4,7 @@ import {
     findAllProrrogaSchema,
     findoneProrrogaSchema,
     deleteProrrogaSchema,
+    updateProrrogaSchema
 } from './schema';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 
@@ -56,6 +57,17 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         prorrogaAdapter.deleteProrrogaHandler
+    );
+
+    fastify.patch(
+        '/:idProrroga',
+        {
+            schema:
+            {
+                ...updateProrrogaSchema
+            },
+        },
+        prorrogaAdapter.updateProrrogaHandler
     );
 };
 
