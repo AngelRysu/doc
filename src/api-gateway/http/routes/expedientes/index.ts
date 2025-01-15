@@ -3,6 +3,7 @@ import { createExpedienteSchema,
     findAllExpedienteSchema,
     findoneExpedienteSchema,
     deleteExpedienteSchema,
+    updateExpedienteSchema
 
 } from './schema';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
@@ -57,6 +58,17 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         expedienteAdapter.deleteExpedienteHandler
+    );  
+
+    fastify.patch(
+        '/:idExpediente',
+        {
+            schema:
+            {
+                ...updateExpedienteSchema
+            },
+        },
+        expedienteAdapter.updateExpedienteHandler
     );  
 };
 
