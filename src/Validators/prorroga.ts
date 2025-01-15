@@ -46,7 +46,7 @@ export const DeleteProrrogaSchema = z.object({
 export const FindAllProrrogaSchema = z.object({
     idUsuario: z.number().int().positive().optional(),
     idDocumento: z.number().int().positive().optional(),
-    vencimiento: dateString,
+    vencimiento: dateString.optional(),
     estado: z.enum(['Elaborado', 'Autorizado']).optional(),    
     page: z.number().int().min(1).optional(),           
     limit: z.number().int().min(1).optional(),          

@@ -1,7 +1,7 @@
-import { Schema } from 'zod';
 import { prorrogaAdapter } from '../../adapters';
 import {
     createProrrogaSchema,
+    findAllProrrogaSchema,
 } from './schema';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 
@@ -21,6 +21,17 @@ function Router(fastify: FastifyInstance): void{
             },
         },
         prorrogaAdapter.createProrrogaHandler
+    );
+
+    fastify.get(
+        '/',
+        {
+            schema:
+            {
+                ...findAllProrrogaSchema
+            },
+        },
+        prorrogaAdapter.findAllProrrogaHandler
     );
 };
 
